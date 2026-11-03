@@ -18,7 +18,12 @@ export default function Hero({ onSearch }) {
     } else {
       const title = query.trim();
       requireLogin(() => {
-        setPostModal({ open: true, type: mode, title });
+        setPostModal({
+          open: true,
+          type: mode === 'lease' ? 'sell' : mode,
+          category: mode === 'lease' ? 'Lease' : '',
+          title
+        });
       });
     }
   };
@@ -33,7 +38,7 @@ export default function Hero({ onSearch }) {
       <p className="lead">Buy, sell, swap or donate with students you can actually meet between classes.</p>
 
       <div className="modes" role="tablist" aria-label="What do you want to do?">
-        {['buy', 'sell', 'swap', 'donate', 'request'].map((m) => (
+        {['buy', 'sell', 'swap', 'donate', 'request', 'lease'].map((m) => (
           <button
             key={m}
             type="button"

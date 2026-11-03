@@ -144,7 +144,7 @@ export default function BrowseSection({ searchQuery, setSearchQuery, isSavedOnly
       </div>
 
       <div className="chips">
-        {['All', ...CATEGORIES].map((cat) => (
+        {['All', ...CATEGORIES.filter((cat) => cat !== 'Lease')].map((cat) => (
           <button
             key={cat}
             type="button"

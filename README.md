@@ -43,11 +43,9 @@ Auth's Site URL and allowed redirect URLs for the local and production app URLs.
 The database trigger restricts new registrations to `@bmsce.ac.in` and
 `@gmail.com`. Email confirmation must remain enabled.
 
-The first migration seeds the initial admin address supplied for this project.
-That email address is promoted to admin by the database seed. No admin
-addresses are bundled into the client. Existing browser-local marketplace data
-is not imported; the Supabase database starts empty. To add an admin later,
-run in the SQL Editor:
+No admin email is seeded by default, and no admin addresses are bundled into
+the client. Existing browser-local marketplace data is not imported; the
+Supabase database starts empty. To add an admin, run in the SQL Editor:
 
 ```sql
 insert into private.admin_email_seeds (email)

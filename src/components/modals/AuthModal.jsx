@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { hasPasswordVariety } from '../../utils/helpers';
 
-export default function AuthModal() {
+export default function AuthModal({ onOpenTerms }) {
   const {
     authModal,
     setAuthModal,
@@ -24,12 +24,14 @@ export default function AuthModal() {
   const [email, setEmail] = useState('');
   const [fullname, setFullname] = useState('');
   const [password, setPassword] = useState('');
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   useEffect(() => {
     if (authModal.open) {
       setMode(authModal.mode || 'login');
       setError('');
       setNote('');
+      setAcceptedTerms(false);
     }
   }, [authModal.open, authModal.mode]);
 
@@ -209,6 +211,22 @@ export default function AuthModal() {
                 Use at least 6 characters and at least three types: lowercase, uppercase, numbers, or symbols.
               </p>
             )}
+            {mode === 'signup' && (
+              <>
+                <label className="terms-consent">
+                  <input
+                    type="checkbox"
+                    required
+                    checked={acceptedTerms}
+                    onChange={(event) => setAcceptedTerms(event.target.checked)}
+                  />
+                  I agree to the Terms &amp; Conditions.
+                </label>
+                <button type="button" className="link-btn" onClick={onOpenTerms}>
+                  Read Terms &amp; Conditions
+                </button>
+              </>
+            )}
             {mode === 'login' && (
               <button
                 type="button"
@@ -250,6 +268,7 @@ export default function AuthModal() {
                   setMode('signup');
                   setError('');
                   setNote('');
+                  setAcceptedTerms(false);
                 }}>
                   New here? Create an account
                 </button>

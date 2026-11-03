@@ -9,6 +9,7 @@ export const CATEGORIES = [
   'Bikes & transport',
   'Kitchen & dorm',
   'Sports & hobbies',
+  'Lease',
   'Other'
 ];
 
@@ -17,7 +18,8 @@ export const HINTS = {
   sell: 'Turn things you no longer use into cash.',
   swap: 'Trade something you have for something you need.',
   donate: 'Give items a second life with someone on campus.',
-  request: "Can't find it? Ask campus and let students offer it to you."
+  request: "Can't find it? Ask campus and let students offer it to you.",
+  lease: 'Find or share a room, sublet, or lease with students nearby.'
 };
 
 export const ACTIONS = {
@@ -25,7 +27,8 @@ export const ACTIONS = {
   sell: 'Start selling',
   swap: 'Start a swap',
   donate: 'Donate an item',
-  request: 'Request an item'
+  request: 'Request an item',
+  lease: 'Post a lease'
 };
 
 export const PLACEHOLDERS = {
@@ -33,7 +36,8 @@ export const PLACEHOLDERS = {
   sell: 'What do you want to sell?',
   swap: 'What do you want to swap?',
   donate: 'What do you want to donate?',
-  request: 'What are you looking for?'
+  request: 'What are you looking for?',
+  lease: 'Room, sublet, or lease details'
 };
 
 export const LABELS = {
@@ -63,7 +67,16 @@ export const CONDS = {
   used: 'Used'
 };
 
-export const PLACES = ['Hostel block', 'Other'];
+export const PLACES = [
+  'Hostel block',
+  'APS block',
+  'PJ block',
+  'Science block',
+  'PG block',
+  'Mechanical block',
+  'Indoor stadium',
+  'Other'
+];
 
 export const SPOTS = [
   'the library entrance',

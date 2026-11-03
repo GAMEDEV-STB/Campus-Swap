@@ -38,7 +38,7 @@ export default function PostListingModal() {
     } else {
       setType(postModal.type || 'sell');
       setTitle(postModal.title || '');
-      setCategory('');
+      setCategory(postModal.category || '');
       setPrice('');
       setWant('');
       setDesc('');
@@ -49,7 +49,7 @@ export default function PostListingModal() {
       setPhotos([]);
     }
     setBanWarn('');
-  }, [editItem, postModal.type, postModal.title, postModal.open]);
+  }, [editItem, postModal.type, postModal.category, postModal.title, postModal.open]);
 
   if (!postModal.open) return null;
 
@@ -190,6 +190,12 @@ export default function PostListingModal() {
               ))}
             </select>
           </label>
+
+          {category === 'Lease' && (
+            <p className="note">
+              For a room or sublet, include monthly rent, deposit, lease dates, occupancy, utilities, and location. Confirm you have permission to sublet.
+            </p>
+          )}
 
           {category === 'Books' && (
             <label>

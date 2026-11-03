@@ -19,10 +19,12 @@ import HoldModal from './components/modals/HoldModal';
 import ReportModal from './components/modals/ReportModal';
 import AdminReportsModal from './components/modals/AdminReportsModal';
 import AlertsModal from './components/modals/AlertsModal';
+import TermsModal from './components/modals/TermsModal';
 
 function MainApp() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isWishlistActive, setIsWishlistActive] = useState(false);
+  const [termsOpen, setTermsOpen] = useState(false);
   const { requireLogin, appError, dataLoading } = useApp();
 
   const handleWishlistToggle = () => {
@@ -61,13 +63,13 @@ function MainApp() {
         <StaySafe />
       </main>
 
-      <Footer />
+      <Footer onOpenTerms={() => setTermsOpen(true)} />
 
       {/* Slide-over chat and messaging */}
       <ChatDrawer />
 
       {/* Modals */}
-      <AuthModal />
+      <AuthModal onOpenTerms={() => setTermsOpen(true)} />
       <PostListingModal />
       <ListingDetailModal />
       <UserProfileModal />
@@ -77,6 +79,7 @@ function MainApp() {
       <ReportModal />
       <AdminReportsModal />
       <AlertsModal />
+      <TermsModal isOpen={termsOpen} onClose={() => setTermsOpen(false)} />
 
       {/* Floating toast alerts */}
       <Toast />

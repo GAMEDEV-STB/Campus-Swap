@@ -6,7 +6,7 @@ export default function HowItWorks() {
       <h2>How it works</h2>
       <ol>
         <li>
-          <strong>Post it.</strong> Add photos, a short description, and choose sell, swap, donate or request. Textbooks can include a course code.
+          <strong>Post it.</strong> Add photos, a short description, and choose sell, swap, donate or request. You can also post a room or sublet under Lease. Textbooks can include a course code.
         </li>
         <li>
           <strong>Chat.</strong> Message, make an offer, or propose a swap. Agree on a public campus spot.

@@ -7,10 +7,6 @@ create table if not exists private.admin_email_seeds (
 revoke all on schema private from public, anon, authenticated;
 revoke all on private.admin_email_seeds from public, anon, authenticated;
 
-insert into private.admin_email_seeds (email)
-values ('souravbs269@gmail.com')
-on conflict (email) do nothing;
-
 create or replace function public.is_verified_campus_user()
 returns boolean
 language sql

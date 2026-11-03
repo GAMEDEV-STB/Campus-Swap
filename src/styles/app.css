@@ -790,6 +790,12 @@ footer {
   color: #D3DBEA;
 }
 
+.modal-content label.terms-consent {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.55rem;
+}
+
 .modal-content input:not([type="radio"]):not([type="checkbox"]),
 .modal-content select,
 .modal-content textarea {
